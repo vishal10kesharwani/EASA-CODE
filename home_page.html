@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Website</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('backgroung-img.png'); /* Replace with your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(6, 6, 65); /* Semi-transparent black background */
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    z-index: 1000; /* Ensure the navbar is above other content */
+  }
+
+  .logo {
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 50px;
+  }
+
+  .icons {
+    display: flex;
+    gap: 20px;
+  }
+
+  .icons a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .icons a:hover {
+    color: #3498db;
+  }
+
+  .icon-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 100px;
+  }
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    background-color: rgba(66, 65, 65, 0.7); /* Semi-transparent white background */
+    padding: 60px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+    margin: 10px;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .card p {
+    color: #fff;
+    padding-top: 10px;
+    font-weight: 400;
+    max-height: 6rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .styled-button {
+    background-color:transparent;
+    color: #ffffff;
+    padding: 30px 100px;
+    border: 1px solid rgb(62, 61, 61);
+    border-radius: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .styled-button:hover {
+    background-color:rgba(52, 152, 219, 0.1);;
+  }
+
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">EASA</div>
+    <div class="icons">
+      <a href="#">
+        <img src="home.png" alt="Home" class="icon-img">
+      </a>
+      <a href="#">
+        <img src="data-report.png" alt="Dashboard" class="icon-img">
+      </a>
+      <a href="#">
+        <img src="comment.png" alt="Chats" class="icon-img">
+      </a>
+      <a href="#">
+        <img src="notification.png" alt="Doubts" class="icon-img">
+      </a>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="allocation.png" alt="Image 1">
+      <a href="acdameic_details.html"><button class="styled-button">Student Subject Allocation </button></a>
+      <p>Simplify course selection with our streamlined system for optimal subject assignment. Elevate student experience effortlessly.</p>
+    </div>
+
+    <div class="card">
+      <img src="feedback-1.png" alt="Image 2" >
+      <a href="http://192.168.7.147:5978"><button onclick="student_details"class="styled-button" >Student Feedback Analysis</button></a>
+      <p>Gain valuable insights with our Student Feedback Analysis System. Elevate learning experiences through data-driven improvements.</p>
+    </div>
+  </div>
+
+  <!-- Rest of your website content goes here -->
+
+</body>
+<script>
+  
+
+</script>
+</html>

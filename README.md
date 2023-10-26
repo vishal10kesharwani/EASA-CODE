@@ -1,28 +1,27 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
 
-# Flask + Vercel
+# Student Feedback & Dashboard System Using Sentiment Analysis
 
-This example shows how to use Flask 3 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+The goal of this project is to develop an automated robust feedback analysis system wherein the user has to write the feedback in application for departments and teachers, then we process and extract the data with the help of NLTK and then applying sentiment analysis using various machine learning algorithm and selecting best algorithm to extract the opinions and subjectivity from the student feedback by classifying them into 3 different categories:
 
-## Demo
+- Positive (1)
+- Neutral (0)
+- Negative (-1)
 
-https://flask3-python-template.vercel.app/
+![](static/StudentScrn1.png)
 
-## How it Works
+## Feedback Form
+![](static/StudentScrn2.png)
 
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
+## Department Feedback Dashboard
+![](static/StudentScrn3.png)
 
-## Running Locally
+![](static/StudentScrn4.png)
 
-```bash
-npm i -g vercel
-vercel dev
-```
+## Staff Feedback Dashboard
+![](static/StudentScrn15.png)
 
-Your Flask application is now available at `http://localhost:3000`.
+## Some Classified Sentiments
+![](static/StudentScrn16.png)
 
-## One-Click Deploy
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+### Youtube Link
+https://youtu.be/5akxmMmsAIM

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #bfd8e9; /* Replace with your background color */
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+           
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(6, 6, 65); /* Semi-transparent black background */
+            padding: 15px 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 10%;
+            z-index: 1000; /* Ensure the navbar is above other content */
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 50px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icons a {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .icons a:hover {
+            color: #3498db;
+        }
+
+        .icon-img {
+            width: 50px;
+            height: 50px;
+            margin-right: 100px;
+        }
+        .main-content {
+            margin-top: 70px;
+            display: flex;
+            width: 90%;
+            justify-content: center;
+            align-items: center;
+            
+            margin-top: 70px;
+            /*background-color: rgba(255, 255, 255, 0.5);  
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);*/
+        }
+
+        .image-section {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+    
+            height: auto;
+        }
+
+        .card-section {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            text-align: center;
+            max-width: 910px;
+            margin-top: 20px;
+            padding: 50px;
+            flex: 1;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            overflow: auto;
+            max-height: 990px; 
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #3498db;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .card-section h1 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .card-section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin: 50px 0;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 86%;
+            padding: 25px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f8f8; /* Light gray background */
+            transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+}
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #3498db; /* Blue border color on focus */
+            background-color: #fff; /* White background on focus */
+        }
+
+        .card-section button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 50px;
+            font-size: 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        #marksObtained,#totalMarks,#sgpa{
+            font-size: 20px;
+        }
+        #result,#backlogs,#subjectPreferences,#subjectPreference3,#subjectPreference2{
+            width: 90%;
+            padding: 20px;
+            font-size: 20px;
+        }
+        .subject-preferences {
+            text-align: left;
+        }
+
+        .subject-preferences label {
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+        }
+
+        /* Additional Styling 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-group select {
+            width: 100%;
+        }*/
+        .card-section button:hover {
+            background-color: #2980b9; /* Darker blue color on hover */
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                margin-top: 30px;
+            }
+
+            .image-section img {
+                max-width: 100%;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 480px) {
+            .main-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 10px;
+                height: auto;
+            }
+
+            .logo {
+                margin-left: 10px;
+            }
+
+            .icons {
+                gap: 1px;
+                margin-right: 10px;
+            }
+
+            .icon-img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="navbar">
+        <div class="logo">EASA</div>
+        <div class="icons">
+            <a href="#">
+                <img src="home.png" alt="Home" class="icon-img">
+            </a>
+            <a href="#">
+                <img src="data-report.png" alt="Dashboard" class="icon-img">
+            </a>
+            <a href="#">
+                <img src="comment.png" alt="Chats" class="icon-img">
+            </a>
+            <a href="#">
+                <img src="notification.png" alt="Doubts" class="icon-img">
+            </a>
+        </div>
+    </div>
+    <div class="main-content">
+        
+        <div class="card-section">
+            <h1>Student Details</h1>
+            <h2>Fill the details correctly</h2>
+            <div class="container">
+                <form method="POST" action="" name="submit-to-google-sheet">
+                     <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="Name of student" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="semester">Semester</label>
+                    <!-- <input type="text" id="semester" name="semester" placeholder="Enter your semester"> -->
+                    <select id="semester" name="semester">
+                        <option>Select your semester</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="enrollment">Enrollment Number</label>
+                    <input type="number" id="enrollment" name="Enrollment no. Number" placeholder="Enter your enrollment number">
+                </div>
+                    <div class="form-group">
+                        <label for="totalMarks">Total Marks</label>
+                        <input type="number" id="totalMarks" name="Total marks of 5th sem" placeholder="Enter total marks">
+                    </div>
+                    <div class="form-group">
+                        <label for="marksObtained">Marks Obtained</label>
+                        <input type="number" id="marksObtained" name="Marks obtained by student in 5th sem" placeholder="Enter marks obtained">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sgpa">SGPA</label>
+                        <input type="decimal" id="sgpa" name="SGPA of 5th Sem ( If Fail write zero)" placeholder="Enter SGPA">
+                    </div>
+                    <div class="form-group">
+                        <label for="result">Result</label>
+                        <select id="result" name="result">
+                            <option value="pass">Pass</option>
+                            <option value="fail">Fail</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="backlogs">No of Backlogs</label>
+                        <select id="backlogs" name="backlogs">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                    <label for="">Branch</label>
+                    <select name="b1" id="branch">
+                        <option value="">-- Choose Branch --</option>
+                        <option value="cse"> Computer Science and Engineering </option>
+                        <option value="etc"> Electronics and Telecomunicaton Engineering </option>
+                        <option value="ee"> Electrical Engineering </option>
+                        <option value="me"> Mechanical Engineering </option>
+                        <option value="ce"> Civil Engineering </option>
+                    </select>
+                </div>
+                    <div class="form-group">
+                       <label for="">Subject Preference 1</label>
+                       <select name="sp1" id="sp1"></select>
+                    </div>
+
+                    <div class="form-group">
+                       <label for="">Subject Preference 2</label>
+                       <select name="sp2" id="sp2"></select>
+                    </div>
+
+                    <div class="form-group">
+                       <label for="">Subject Preference 3</label>
+                       <select name="sp3" id="sp3"></select>
+                    </div>
+
+                    <button onclick="fun()" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+ const scriptURL = 'https://script.google.com/macros/s/AKfycbyFa9t-GhIHG2A6E4hXoQeYyhQc_1kdV2jYJhiGICRn9O7gCkQrJgaoFS6f7iftlDwkzg/exec'
+  const form = document.forms['submit-to-google-sheet']
+
+  function confirmAndSubmit() {
+    const confirmation = window.confirm("Confirm if you'd like to submit this information!");
+
+    if (confirmation) {
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          console.log('Success!', response);
+          // Redirect to the home page after successful submission
+          window.location.href = 'home_page.html'; // Replace 'home.html' with your actual home page URL
+        })
+        .catch(error => console.error('Error!', error.message));
+    }
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    confirmAndSubmit();
+  });
+
+
+  let branch = document.getElementById("branch");
+  let semester = document.getElementById("semester");
+  let sp1 = document.getElementById("sp1");
+  let sp2 = document.getElementById("sp2");
+  let sp3 = document.getElementById("sp3");
+
+  const multipleOptions = {
+    cse_6: ['Basics of Civil Engineering', 'PLDC and SCADA Systems', 'Solar PV system', 'Consumer Electronics'],
+    etc_6: ['Basics of Civil Engineering', 'PLDC and SCADA Systems', 'Solar PV system', 'Linux Fundamental', 'Android Application Development'],
+    ee_6: ['Basics of Civil Engineering', 'Consumer Electronics', 'Linux Fundamental', 'Android Application Development'],
+    ce_6: ['PLDC and SCADA Systems', 'Solar PV system', 'Consumer Electronics', 'Linux Fundamental', 'Android Application Development'],
+    cse_7: ['Power Plant Engineering', 'Control system' ,'Renewable energy resources', 'Civil Engineering Material', 'Mechatronics', 'Bio-Engineering'],
+    me_7: ['Power Plant Engineering', 'Control system','Java','Python','Civil Engineering Material', 'Mechatronics', 'Bio-Engineering'],
+    ee_7: ['Renewable energy resources', 'Civil Engineering Material', 'Mechatronics', 'Bio-Engineering', 'Java','Python'],
+    etc_7: ['Power Plant Engineering', 'Control system','Renewable energy resources', 'Civil Engineering Material','Java','Python'],
+    ce_7: ['Java','Python', 'Renewable energy resources', 'Control system', 'Power Plant Engineering', 'Control system','Mechatronics', 'Bio-Engineering'],
+  };
+
+  function updatesp1() {
+    sp1.innerHTML = '';
+
+    // Generate new options based on the selections
+    const selectedFirst = branch.value;
+    const selectedSecond = semester.value;
+    const combinedSelection = selectedFirst + '_' + selectedSecond;
+    if (multipleOptions.hasOwnProperty(combinedSelection)) {
+      multipleOptions[combinedSelection].forEach(optionText => {
+        const option = document.createElement('option');
+        option.value = optionText;
+        option.textContent = optionText;
+        sp1.appendChild(option);
+      });
+    }
+  }
+
+  branch.addEventListener('change', updatesp1);
+  semester.addEventListener('change', updatesp1);
+
+  updatesp1();
+
+  function updatesp2() {
+    sp2.innerHTML = '';
+
+    // Generate new options based on the selections
+    const selectedFirst = branch.value;
+    const selectedSecond = semester.value;
+    const combinedSelection = selectedFirst + '_' + selectedSecond;
+    
+    if (multipleOptions.hasOwnProperty(combinedSelection)) {
+      multipleOptions[combinedSelection].forEach(optionText => {
+        const option = document.createElement('option');
+        option.value = optionText;
+        option.textContent = optionText;
+        sp2.appendChild(option);
+      });
+    }
+  }
+
+  branch.addEventListener('change', updatesp2);
+  semester.addEventListener('change', updatesp2);
+
+  updatesp2();
+
+  function updatesp3() {
+    sp3.innerHTML = '';
+
+    // Generate new options based on the selections
+    const selectedFirst = branch.value;
+    const selectedSecond = semester.value;
+    const combinedSelection = selectedFirst + '_' + selectedSecond;
+    
+    if (multipleOptions.hasOwnProperty(combinedSelection)) {
+      multipleOptions[combinedSelection].forEach(optionText => {
+        const option = document.createElement('option');
+        option.value = optionText;
+        option.textContent = optionText;
+        sp3.appendChild(option);
+      });
+    }
+  }
+
+  branch.addEventListener('change', updatesp3);
+  semester.addEventListener('change', updatesp3);
+
+  updatesp3();
+
+</script>
+     
+</body>
+</html>
