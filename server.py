@@ -179,5 +179,6 @@ def display():
         return render_template('feedbacks.html', tables=[df.to_html(classes='data', header="true")])
 
 
-
+app.secret_key = os.urandom(12)
+app.run( host='0.0.0.0', debug=False)
 
