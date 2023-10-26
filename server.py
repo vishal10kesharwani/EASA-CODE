@@ -10,7 +10,7 @@ from teacherdashboard import get_feedback_counts
 
 app = Flask(__name__)
 
-@app.route('/t')
+@app.route('/')
 def index():
     return render_template('index.html')
 
